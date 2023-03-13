@@ -16,7 +16,7 @@ workflows:
                 - main
           requires:
             - build
-
+#
 jobs:
   build:
     working_directory: ~/CA1-DevOps
@@ -43,4 +43,4 @@ jobs:
       - run:
           name: deploy-application
           command: ssh -o StrictHostKeyChecking=no $EC2_USERNAME@$EC2_PUBLIC_DNS "export SERVER=\"$SERVER\"; export PRIVATE_KEY=\"$PRIVATE_KEY\"; rm -rf CA1-DevOps/; git clone https://github.com/Extremeist/CA1-DevOps.git; source CA1-DevOps/deploy.sh"
-
+#test
